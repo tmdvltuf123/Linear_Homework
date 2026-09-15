@@ -8,7 +8,7 @@ int main(void)
     /*
         2x1 +  x2 =  3
         2x1 -  x2 =  1
-         x1 - 2x2 = -1    
+         x1 - 2x2 =  -1    
     */
     
     double A[3][2] = {
