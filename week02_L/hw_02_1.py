@@ -1,5 +1,10 @@
 import numpy as np
 
+# 선형시스템 A∙x = b 
+# 2x1 +  x2 =  3
+# 2x1 -  x2 =  1
+#  x1 - 2x2 = -1
+
 A = np.array([
     [2,  1],
     [2, -1],
@@ -8,7 +13,8 @@ A = np.array([
 
 b = np.array([3, 1, -1], dtype=float)
 
-solution, residuals, rnak, singular_values = np.linalg.lstsq(
+# 방정식 3개, 미지수 2개이므로 최소제곱법 사용
+solution, residuals, rank, singular_values = np.linalg.lstsq(
     A, b, rcond=None
 )
 
@@ -17,6 +23,7 @@ x1, x2 = solution
 print(f"x1 = {x1:.6f}")
 print(f"x2 = {x2:.6f}")
 
+# 모든 방정식을 정확히 만족하는지 확인
 print("A @ solution =", A @ solution)
 print("b =", b)
 
